@@ -5,12 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Meeresspiegelanstieg & Grundrechte</title>
   <link rel="stylesheet" href="style.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 </head>
 
 <body>
 
 <nav class="nav">
-  <a href="#hero">Start</a>
+  <a href="#hero">Start</a>                                                                                                                                 
   <a href="#modell">Modell</a>
   <a href="#beispiele">Fallbeispiele</a>
   <a href="#story">Story</a>
@@ -34,20 +35,13 @@
     erwärmtes Meerwasser aus. Beides führt zu einem steigenden Meeresspiegel.
   </p>
 
+  <!-- 3D Terrain + Wasser -->
+  <div id="terrain-container" style="height:500px;"></div>
+
   <label for="seaSlider">
     Meeresspiegel: <strong><span id="seaValue">0.0</span> m</strong>
   </label>
   <input type="range" min="0" max="200" value="0" id="seaSlider">
-
-  <div class="map-wrapper">
-    <img src="bilder/meeresspiegel_karte.jpg" class="map-base" alt="Karte Küstenregionen">
-    <div class="flood-layer" id="floodLayer"></div>
-
-    <div class="city-marker hamburg">Hamburg</div>
-    <div class="city-marker venedig">Venedig</div>
-    <div class="city-marker niederlande">Niederlande</div>
-    <div class="city-marker bangladesch">Bangladesch</div>
-  </div>
 
   <p id="impactText" class="impact-text">
     Beim aktuellen Meeresspiegel sind viele Küstenregionen noch bewohnbar.
