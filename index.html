@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Meeresspiegelanstieg & Grundrechte</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+<nav class="nav">
+  <a href="#hero">Start</a>
+  <a href="#modell">Modell</a>
+  <a href="#beispiele">Fallbeispiele</a>
+  <a href="#story">Story</a>
+  <a href="#fazit">Fazit</a>
+</nav>
+
+<header id="hero" class="hero">
+  <img src="bilder/meeresspiegel.jpg" class="hero-bg" alt="Meeresspiegel">
+  <div class="hero-overlay">
+    <h1>Meeresspiegelanstieg & Menschenrechte</h1>
+    <p>Was steigende Ozeane für Städte und Menschen bedeuten</p>
+  </div>
+</header>
+
+<main>
+
+<section class="glass-card" id="modell">
+  <h2>Interaktives Modell: Meeresspiegelanstieg</h2>
+  <p>
+    Durch den Klimawandel schmelzen Gletscher und Eisschilde. Gleichzeitig dehnt sich
+    erwärmtes Meerwasser aus. Beides führt zu einem steigenden Meeresspiegel.
+  </p>
+
+  <label for="seaSlider">
+    Meeresspiegel: <strong><span id="seaValue">0.0</span> m</strong>
+  </label>
+  <input type="range" min="0" max="200" value="0" id="seaSlider">
+
+  <div class="map-wrapper">
+    <img src="bilder/meeresspiegel_karte.png" class="map-base" alt="Karte Küstenregionen">
+    <div class="flood-layer" id="floodLayer"></div>
+
+    <div class="city-marker hamburg">Hamburg</div>
+    <div class="city-marker venedig">Venedig</div>
+    <div class="city-marker niederlande">Niederlande</div>
+    <div class="city-marker bangladesch">Bangladesch</div>
+  </div>
+
+  <p id="impactText" class="impact-text">
+    Beim aktuellen Meeresspiegel sind viele Küstenregionen noch bewohnbar.
+  </p>
+</section>
+
+<section class="glass-card" id="beispiele">
+  <h2>Fallbeispiele weltweit</h2>
+
+  <h3>Hamburg</h3>
+  <p>
+    Hamburg liegt an der Elbe und ist durch Deiche geschützt. Steigt der Meeresspiegel
+    weiter an, müssen diese ständig erhöht werden. Bei Versagen drohen massive Schäden
+    an Wohngebieten und Infrastruktur.
+  </p>
+
+  <h3>Venedig</h3>
+  <p>
+    Venedig ist bereits heute regelmäßig überflutet. Ein weiterer Meeresspiegelanstieg
+    gefährdet die Existenz der Stadt und ihr kulturelles Erbe.
+  </p>
+
+  <h3>Niederlande</h3>
+  <p>
+    Große Teile der Niederlande liegen unter dem Meeresspiegel. Der steigende Ozean
+    stellt eine direkte Bedrohung für Millionen Menschen dar und erfordert extrem
+    aufwendigen Küstenschutz.
+  </p>
+
+  <h3>Bangladesch</h3>
+  <p>
+    In Bangladesch leben Millionen Menschen in flachen Küstenregionen. Schon ein
+    Meeresspiegelanstieg von einem Meter könnte ganze Landstriche unbewohnbar machen.
+  </p>
+</section>
+
+<section class="glass-card" id="story">
+  <h2>Eine Familie im Jahr 2100</h2>
+  <p>
+    Die Familie Rahman lebt an der Küste Bangladeschs. Früher konnten sie vom Reisanbau
+    leben. Heute ist der Boden durch Salzwasser unbrauchbar geworden.
+  </p>
+  <p>
+    Immer häufiger dringt das Meer in ihr Dorf ein. Die Familie muss entscheiden,
+    ob sie ihre Heimat verlässt. Millionen Menschen weltweit stehen vor derselben
+    Situation – sie werden zu Klimaflüchtlingen.
+  </p>
+  <p>
+    Der Meeresspiegelanstieg bedroht damit grundlegende Menschenrechte:
+    das Recht auf Wohnen, Nahrung, Wasser und Sicherheit.
+  </p>
+</section>
+
+<section class="glass-card" id="fazit">
+  <h2>Fazit</h2>
+  <p>
+    Der Meeresspiegelanstieg ist keine ferne Zukunftsvision. Er betrifft bereits heute
+    Millionen Menschen. Klimaschutz ist daher nicht nur Umweltschutz, sondern auch
+    aktiver Schutz der Menschenrechte.
+  </p>
+</section>
+
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
