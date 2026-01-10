@@ -69,12 +69,12 @@ geometry.computeVertexNormals();
   scene.add(terrain);
 
   // Wasser Ebene
-  const waterGeo = new THREE.PlaneGeometry(size, size);
-  const waterMat = new THREE.MeshStandardMaterial({ color:0x0077ff, transparent:true, opacity:0.5 });
-  const water = new THREE.Mesh(waterGeo, waterMat);
-  water.rotation.x = -Math.PI/2;
-  water.position.y = 0.1;
-  scene.add(water);
+  const waterMat = new THREE.MeshStandardMaterial({
+  color: 0x2b7fff,
+  transparent: true,
+  opacity: 0.55
+});
+
 
   // Städte-Marker
   const cityMaterial = new THREE.MeshStandardMaterial({color:0xff0000});
