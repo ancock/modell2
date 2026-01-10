@@ -97,7 +97,7 @@ geometry.computeVertexNormals();
   seaSlider.addEventListener("input", () => {
     const val = seaSlider.value/100 * 5;
     seaValue.textContent = val.toFixed(1);
-    water.position.y = val;
+   water.position.y = val + 0.05;
 
     if(val < 1){
       impactText.textContent = "Geringe Auswirkungen – Küstenschutz ist noch möglich.";
