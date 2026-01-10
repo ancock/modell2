@@ -33,31 +33,35 @@ scene.add(directionalLight);
 const loader = new THREE.TextureLoader();
 loader.load("bilder/hoehenkarte_de.png", texture => {
 
-  const size = 20; // Dimension der Karte
-  const segments = 256;
+  const size = 20;
+const segments = 256;
 
-  const geometry = new THREE.PlaneGeometry(size, size, segments, segments);
+const geometry = new THREE.PlaneGeometry(size, size, segments, segments);
 
-  const canvas = document.createElement("canvas");
-  canvas.width = texture.image.width;
-  canvas.height = texture.image.height;
-  const ctx = canvas.getContext("2d");
-  ctx.drawImage(texture.image, 0,0);
+const canvas = document.createElement("canvas");
+canvas.width = texture.image.width;
+canvas.height = texture.image.height;
+const ctx = canvas.getContext("2d");
+ctx.drawImage(texture.image, 0, 0);
 
-  const data = ctx.getImageData(0,0,canvas.width,canvas.height).data;
+const imgData = ctx.getImageData(0, 0, canvas.width, canvas.height).data;
 
-  for(let i=0;i<geometry.attributes.position.count;i++){
-    const x = geometry.attributes.position.getX(i);
-    const y = geometry.attributes.position.getY(i);
+for (let i = 0; i < geometry.attributes.position.count; i++) {
+  const ix = i % (segments + 1);
+  const iy = Math.floor(i / (segments + 1));
 
-    const ix = Math.floor((x/size + 0.5) * (canvas.width-1));
-    const iy = Math.floor((y/size + 0.5) * (canvas.height-1));
-    const index = (iy*canvas.width + ix)*4;
-    const height = data[index]/255*5;
-    geometry.attributes.position.setZ(i, height);
-  }
+  const px = Math.floor(ix / segments * (canvas.width - 1));
+  const py = Math.floor(iy / segments * (canvas.height - 1));
 
-  geometry.computeVertexNormals();
+  const index = (py * canvas.width + px) * 4;
+
+  // WICHTIG: realistische Höhe (sehr klein!)
+  const height = imgData[index] / 255 * 1.2;
+
+  geometry.attributes.position.setZ(i, height);
+}
+
+geometry.computeVertexNormals();
 
   const material = new THREE.MeshStandardMaterial({ color:0x88aa88, flatShading:true });
   const terrain = new THREE.Mesh(geometry, material);
