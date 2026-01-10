@@ -51,7 +51,7 @@ scene.add(dirLight);
 ========================= */
 const loader = new THREE.TextureLoader();
 const heightTexture = loader.load("bilder/hoehenkarte_de.png");
-const germanyTexture = loader.load("bilder/deutschland_textur.jpg");
+const germanyTexture = loader.load("bilder/istockphoto-836516008-612x612.jpg");
 
 /* =========================
    Globale Objekte
