@@ -66,7 +66,7 @@ loader.load("bilder/hoehenkarte_de.png", (heightTexture) => {
     const py = Math.floor(iy / segments * canvas.height);
 
     const index = (py * canvas.width + px) * 4;
-    const h = data[index] / 255 * 1.3;
+    const h = data[index] / 255 * 0.3;
 
     geometry.attributes.position.setZ(i, h);
   }
