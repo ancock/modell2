@@ -3,109 +3,239 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Meeresspiegelanstieg & Grundrechte</title>
+
+  <title>Meeresspiegelanstieg & Menschenrechte</title>
+
+  <!-- SEO / Schulprojekt-Optimierung -->
+  <meta name="description" content="Interaktive Website zum Thema Meeresspiegelanstieg und seine Auswirkungen auf die Menschenrechte weltweit. Mit Modell, Fallbeispielen und Zukunftsszenario." />
+  <meta name="author" content="Schulprojekt – Klima & Menschenrechte" />
+
   <link rel="stylesheet" href="style.css" />
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
 </head>
 
 <body>
 
-<nav class="nav">
-  <a href="#hero">Start</a>                                                                                                                                 
-  <a href="#modell">Modell</a>
-  <a href="#beispiele">Fallbeispiele</a>
-  <a href="#story">Story</a>
-  <a href="#fazit">Fazit</a>
+<!-- Navigation -->
+<nav class="nav" aria-label="Hauptnavigation">
+  <div class="nav-container">
+    <a href="#hero" class="logo">Meer & Rechte</a>
+    <div class="nav-links">
+      <a href="#modell">Modell</a>
+      <a href="#beispiele">Fallbeispiele</a>
+      <a href="#rechte">Menschenrechte</a>
+      <a href="#story">Zukunftsszenario</a>
+      <a href="#fazit">Fazit</a>
+    </div>
+  </div>
 </nav>
 
+<!-- Hero -->
 <header id="hero" class="hero">
-  <img src="bilder/ChatGPT Image 6. Jan. 2026, 13_06_57.png" class="hero-bg" alt="Meeresspiegel">
+  <img 
+    src="bilder/ChatGPT Image 6. Jan. 2026, 13_06_57.png" 
+    class="hero-bg" 
+    alt="Küstenlandschaft mit steigendem Meeresspiegel als Symbol für den Klimawandel"
+  >
+
   <div class="hero-overlay">
     <h1>Meeresspiegelanstieg & Menschenrechte</h1>
-    <p>Was steigende Ozeane für Städte und Menschen bedeuten</p>
+    <p>
+      Wie der Klimawandel Lebensräume verändert – und warum der Schutz des Klimas
+      auch der Schutz grundlegender Rechte ist
+    </p>
+    <a href="#modell" class="hero-button">Interaktives Modell starten</a>
   </div>
 </header>
 
-<main>
+<main id="main-content">
 
-<section class="glass-card" id="modell">
-  <h2>Interaktives Modell: Meeresspiegelanstieg</h2>
+<!-- Modell -->
+<section class="glass-card" id="modell" aria-labelledby="modell-title">
+  <h2 id="modell-title">Interaktives Modell: Steigender Meeresspiegel</h2>
+
   <p>
-    Durch den Klimawandel schmelzen Gletscher und Eisschilde. Gleichzeitig dehnt sich
-    erwärmtes Meerwasser aus. Beides führt zu einem steigenden Meeresspiegel.
+    Der globale Meeresspiegel steigt vor allem durch zwei Prozesse:
+    das Abschmelzen von Gletschern und Eisschilden sowie die
+    Ausdehnung von Meerwasser durch Erwärmung.
+    Küstenregionen gehören zu den am stärksten gefährdeten Lebensräumen der Erde.
   </p>
 
-  <!-- 3D Terrain + Wasser -->
-  <div id="terrain-container" style="height:500px;"></div>
+  <p>
+    Dieses Modell zeigt vereinfacht, wie sich ein steigender Meeresspiegel auf
+    Landflächen auswirkt und welche Regionen langfristig überflutet werden können.
+  </p>
 
-  <label for="seaSlider">
-    Meeresspiegel: <strong><span id="seaValue">0.0</span> m</strong>
-  </label>
-  <input type="range" min="0" max="200" value="0" id="seaSlider">
+  <!-- 3D Terrain -->
+  <div 
+    id="terrain-container" 
+    class="terrain-container" 
+    role="img" 
+    aria-label="3D-Modell einer Landschaft mit ansteigendem Meeresspiegel"
+  ></div>
+
+  <div class="slider-container">
+    <label for="seaSlider">
+      Meeresspiegel:
+      <strong><span id="seaValue">0.0</span> Meter</strong>
+    </label>
+    <input 
+      type="range" 
+      min="0" 
+      max="200" 
+      value="0" 
+      id="seaSlider"
+      aria-describedby="impactText"
+    >
+  </div>
 
   <p id="impactText" class="impact-text">
     Beim aktuellen Meeresspiegel sind viele Küstenregionen noch bewohnbar.
   </p>
 </section>
 
-<section class="glass-card" id="beispiele">
-  <h2>Fallbeispiele weltweit</h2>
+<!-- Fallbeispiele -->
+<section class="glass-card" id="beispiele" aria-labelledby="beispiele-title">
+  <h2 id="beispiele-title">Fallbeispiele weltweit</h2>
 
-  <h3>Hamburg</h3>
+  <article class="case">
+    <h3>Hamburg (Deutschland)</h3>
+    <p>
+      Hamburg liegt an der Elbe und ist durch ein umfangreiches Deichsystem geschützt.
+      Mit steigendem Meeresspiegel müssen diese Schutzanlagen kontinuierlich erhöht
+      und verstärkt werden.
+    </p>
+    <p>
+      Ein Versagen der Deiche würde nicht nur wirtschaftliche Schäden verursachen,
+      sondern auch das <strong>Recht auf Wohnen und Sicherheit</strong> für viele Menschen gefährden.
+    </p>
+  </article>
+
+  <article class="case">
+    <h3>Venedig (Italien)</h3>
+    <p>
+      Die historische Stadt ist bereits heute regelmäßig von Hochwasser betroffen.
+      Der steigende Meeresspiegel bedroht Wohnraum, Infrastruktur und einzigartiges
+      Kulturerbe.
+    </p>
+    <p>
+      Damit steht auch das <strong>Recht auf kulturelle Teilhabe</strong> und der Schutz
+      historischer Lebensräume auf dem Spiel.
+    </p>
+  </article>
+
+  <article class="case">
+    <h3>Niederlande</h3>
+    <p>
+      Große Teile des Landes liegen unter dem Meeresspiegel.
+      Durch technische Schutzsysteme werden Städte und Landwirtschaft gesichert.
+    </p>
+    <p>
+      Der steigende Aufwand zeigt, wie stark das <strong>Recht auf Nahrung, Wohnen und wirtschaftliche Existenz</strong>
+      vom Klimaschutz abhängt.
+    </p>
+  </article>
+
+  <article class="case">
+    <h3>Bangladesch</h3>
+    <p>
+      Millionen Menschen leben in flachen Küstenregionen, die besonders anfällig für
+      Überschwemmungen und Versalzung von Böden sind.
+    </p>
+    <p>
+      Schon ein geringer Meeresspiegelanstieg kann das
+      <strong>Recht auf sauberes Wasser, Nahrung und eine sichere Heimat</strong> gefährden.
+    </p>
+  </article>
+</section>
+
+<!-- Menschenrechte -->
+<section class="glass-card" id="rechte" aria-labelledby="rechte-title">
+  <h2 id="rechte-title">Meeresspiegelanstieg & Menschenrechte</h2>
+
   <p>
-    Hamburg liegt an der Elbe und ist durch Deiche geschützt. Steigt der Meeresspiegel
-    weiter an, müssen diese ständig erhöht werden. Bei Versagen drohen massive Schäden
-    an Wohngebieten und Infrastruktur.
+    Der Klimawandel betrifft nicht nur die Umwelt, sondern auch grundlegende
+    Menschenrechte, die in der Allgemeinen Erklärung der Menschenrechte der
+    Vereinten Nationen festgehalten sind.
   </p>
 
-  <h3>Venedig</h3>
-  <p>
-    Venedig ist bereits heute regelmäßig überflutet. Ein weiterer Meeresspiegelanstieg
-    gefährdet die Existenz der Stadt und ihr kulturelles Erbe.
-  </p>
+  <ul class="rights-list">
+    <li>
+      <strong>Recht auf Leben und Sicherheit (Artikel 3):</strong>
+      Überschwemmungen und Extremwetter gefährden das Leben von Millionen Menschen.
+    </li>
+    <li>
+      <strong>Recht auf Wohnen (Artikel 25):</strong>
+      Steigende Meere zerstören Häuser und zwingen Familien zur Flucht.
+    </li>
+    <li>
+      <strong>Recht auf Nahrung und Wasser (Artikel 25):</strong>
+      Versalzene Böden und Trinkwasserknappheit bedrohen die Grundversorgung.
+    </li>
+    <li>
+      <strong>Recht auf Bildung (Artikel 26):</strong>
+      Klimabedingte Migration kann Schulbesuche und Ausbildung unterbrechen.
+    </li>
+  </ul>
 
-  <h3>Niederlande</h3>
   <p>
-    Große Teile der Niederlande liegen unter dem Meeresspiegel. Der steigende Ozean
-    stellt eine direkte Bedrohung für Millionen Menschen dar und erfordert extrem
-    aufwendigen Küstenschutz.
-  </p>
-
-  <h3>Bangladesch</h3>
-  <p>
-    In Bangladesch leben Millionen Menschen in flachen Küstenregionen. Schon ein
-    Meeresspiegelanstieg von einem Meter könnte ganze Landstriche unbewohnbar machen.
+    Menschen, die ihre Heimat aufgrund des Klimawandels verlassen müssen,
+    werden oft als <strong>Klimaflüchtlinge</strong> bezeichnet. Ihr Schutz ist eine
+    wachsende Herausforderung für die internationale Gemeinschaft.
   </p>
 </section>
 
-<section class="glass-card" id="story">
-  <h2>Eine Familie im Jahr 2100</h2>
+<!-- Story -->
+<section class="glass-card" id="story" aria-labelledby="story-title">
+  <h2 id="story-title">Zukunftsszenario: Eine Familie im Jahr 2100</h2>
+
   <p>
-    Die Familie Rahman lebt an der Küste Bangladeschs. Früher konnten sie vom Reisanbau
-    leben. Heute ist der Boden durch Salzwasser unbrauchbar geworden.
+    Die Familie Rahman lebt in einem kleinen Küstendorf in Bangladesch.
+    Früher reichten ihre Ernten aus, um sich und ihre Kinder zu versorgen.
   </p>
+
   <p>
-    Immer häufiger dringt das Meer in ihr Dorf ein. Die Familie muss entscheiden,
-    ob sie ihre Heimat verlässt. Millionen Menschen weltweit stehen vor derselben
-    Situation – sie werden zu Klimaflüchtlingen.
+    Doch das Meer ist näher gerückt. Der Boden ist salzig, das Trinkwasser knapp
+    und starke Stürme zerstören regelmäßig ihre einfachen Häuser.
   </p>
+
   <p>
-    Der Meeresspiegelanstieg bedroht damit grundlegende Menschenrechte:
-    das Recht auf Wohnen, Nahrung, Wasser und Sicherheit.
+    Die Familie steht vor einer schweren Entscheidung:
+    bleiben und ihre Existenz riskieren – oder fliehen und in einer fremden Stadt
+    neu anfangen.
+  </p>
+
+  <p class="highlight">
+    Dieses Szenario zeigt, wie eng der Klimawandel mit dem
+    <strong>Recht auf Sicherheit, Heimat und Würde</strong> verbunden ist.
   </p>
 </section>
 
-<section class="glass-card" id="fazit">
-  <h2>Fazit</h2>
+<!-- Fazit -->
+<section class="glass-card" id="fazit" aria-labelledby="fazit-title">
+  <h2 id="fazit-title">Fazit</h2>
+
   <p>
-    Der Meeresspiegelanstieg ist keine ferne Zukunftsvision. Er betrifft bereits heute
-    Millionen Menschen. Klimaschutz ist daher nicht nur Umweltschutz, sondern auch
-    aktiver Schutz der Menschenrechte.
+    Der Meeresspiegelanstieg ist kein abstraktes Zukunftsproblem,
+    sondern bereits heute Realität für Millionen Menschen weltweit.
+  </p>
+
+  <p>
+    Klimaschutz bedeutet deshalb auch den Schutz grundlegender Menschenrechte.
+    Politische Entscheidungen, technologische Innovationen und individuelles
+    Handeln tragen gemeinsam Verantwortung für eine gerechte und sichere Zukunft.
   </p>
 </section>
 
 </main>
 
-<script src="script.js"></script>
+<footer class="footer">
+  <p>
+    Schulprojekt – Thema: Klimawandel & Menschenrechte |
+    Informationsbasis: Vereinte Nationen, IPCC, Umweltbundesamt
+  </p>
+</footer>
+
+<script src="script.js" defer></script>
 </body>
 </html>
