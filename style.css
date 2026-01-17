@@ -1,32 +1,75 @@
-* {
+/* =========================
+   Reset & Basis
+========================= */
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: Arial, sans-serif;
+}
+
+:root {
+  --bg-main: #0b132b;
+  --bg-glass: rgba(255, 255, 255, 0.08);
+  --bg-nav: rgba(0, 0, 0, 0.6);
+  --accent: #3a86ff;
+  --text-main: #ffffff;
+  --text-muted: rgba(255, 255, 255, 0.75);
+  --radius: 18px;
+  --blur: 12px;
 }
 
 body {
-  background: #0b132b;
-  color: #ffffff;
-  line-height: 1.6;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+  background: linear-gradient(180deg, #020617, #0b132b 60%);
+  color: var(--text-main);
+  line-height: 1.7;
 }
 
+/* =========================
+   Navigation
+========================= */
 .nav {
   position: fixed;
   top: 0;
   width: 100%;
-  background: rgba(0,0,0,0.6);
-  padding: 10px;
-  text-align: center;
-  z-index: 10;
+  background: var(--bg-nav);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
 }
 
-.nav a {
+.nav-container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-weight: 700;
   color: white;
-  margin: 0 15px;
   text-decoration: none;
+  letter-spacing: 0.5px;
 }
 
+.nav-links a {
+  color: white;
+  margin-left: 20px;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: color 0.2s ease;
+}
+
+.nav-links a:hover {
+  color: var(--accent);
+}
+
+/* =========================
+   Hero
+========================= */
 .hero {
   position: relative;
   height: 100vh;
@@ -37,80 +80,190 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  filter: brightness(0.7);
 }
 
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0,0,0,0.5);
+  background: linear-gradient(
+    rgba(0, 0, 0, 0.6),
+    rgba(0, 0, 0, 0.85)
+  );
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  text-align: center;
+  padding: 20px;
 }
 
 .hero-overlay h1 {
-  font-size: 3rem;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  margin-bottom: 15px;
 }
 
 .hero-overlay p {
-  font-size: 1.2rem;
+  max-width: 700px;
+  font-size: clamp(1rem, 2.5vw, 1.3rem);
+  color: var(--text-muted);
+  margin-bottom: 30px;
 }
 
+/* Button */
+.hero-button {
+  background: var(--accent);
+  color: white;
+  padding: 12px 28px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.hero-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(58, 134, 255, 0.4);
+}
+
+/* =========================
+   Main Content
+========================= */
 main {
-  padding: 80px 20px;
+  padding: 100px 20px 60px;
 }
 
+/* Glass Cards */
 .glass-card {
   max-width: 900px;
   margin: 40px auto;
-  padding: 30px;
-  background: rgba(255,255,255,0.08);
-  backdrop-filter: blur(10px);
-  border-radius: 16px;
+  padding: 32px;
+  background: var(--bg-glass);
+  backdrop-filter: blur(var(--blur));
+  border-radius: var(--radius);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
 }
 
+.glass-card h2 {
+  margin-bottom: 20px;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+}
+
+.glass-card h3 {
+  margin-top: 20px;
+  margin-bottom: 8px;
+  color: var(--accent);
+}
+
+.glass-card p {
+  margin-bottom: 14px;
+  color: var(--text-muted);
+}
+
+/* =========================
+   Cases / Fallbeispiele
+========================= */
+.case {
+  padding: 16px;
+  border-left: 4px solid var(--accent);
+  margin-bottom: 20px;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 10px;
+}
+
+/* =========================
+   Rights List
+========================= */
+.rights-list {
+  list-style: none;
+  margin: 20px 0;
+}
+
+.rights-list li {
+  padding-left: 28px;
+  position: relative;
+  margin-bottom: 12px;
+  color: var(--text-muted);
+}
+
+.rights-list li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-weight: bold;
+}
+
+/* =========================
+   Terrain / Modell
+========================= */
+.terrain-container {
+  height: 400px;
+  width: 100%;
+  margin: 20px 0;
+  border-radius: 14px;
+  overflow: hidden;
+  background: #020617;
+  box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.6);
+}
+
+.slider-container {
+  margin-top: 10px;
+}
+
+/* Range Slider */
 input[type="range"] {
   width: 100%;
-  margin: 15px 0;
+  margin-top: 12px;
+  accent-color: var(--accent);
 }
 
-/* Karte */
-.map-wrapper {
-  position: relative;
-  margin-top: 20px;
-  border-radius: 12px;
-  overflow: hidden;
-}
-
-.map-base {
-  width: 100%;
-}
-
-.flood-layer {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 0%;
-  background: rgba(0,120,255,0.6);
-  transition: height 0.4s ease;
-}
-
-.city-marker {
-  position: absolute;
-  background: rgba(0,0,0,0.7);
-  padding: 4px 8px;
-  border-radius: 6px;
-  font-size: 0.8rem;
-}
-
-.hamburg { top: 30%; left: 45%; }
-.venedig { top: 45%; left: 50%; }
-.niederlande { top: 27%; left: 42%; }
-.bangladesch { top: 55%; left: 70%; }
-
+/* =========================
+   Impact / Highlight
+========================= */
 .impact-text {
   margin-top: 15px;
-  font-weight: bold;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.highlight {
+  background: rgba(58, 134, 255, 0.15);
+  border-left: 4px solid var(--accent);
+  padding: 12px 16px;
+  border-radius: 8px;
+}
+
+/* =========================
+   Footer
+========================= */
+.footer {
+  text-align: center;
+  padding: 30px 20px;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+/* =========================
+   Responsive Breakpoints
+========================= */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+
+  .glass-card {
+    padding: 22px;
+    margin: 30px 10px;
+  }
+
+  .case {
+    padding: 12px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .glass-card {
+    max-width: 1000px;
+  }
 }
